@@ -1,0 +1,13 @@
+POST http://localhost:8000/v1/player/many
+Content-Type: application/json
+
+[
+    {
+        "long_name": "Sub Zero Project",
+        "value_eur": "75000"
+    },
+    {
+        "long_name": "ZZZZZ",
+        "value_eur": "15500000"
+    }
+]
