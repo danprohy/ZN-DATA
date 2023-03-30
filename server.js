@@ -7,6 +7,7 @@ const morgan = require("morgan");
 const dotenv = require("dotenv");
 const playerRoute = require("./routes/player.route");
 const authRoute = require("./routes/auth.route");
+const userManageRoute = require("./routes/userManagePlayer.route");
 const { options } = require("./routes/player.route");
 
 dotenv.config();
@@ -22,6 +23,7 @@ app.use(cors());
 //ROUTES
 app.use("/auth", authRoute);
 app.use("/v1/player", playerRoute);
+app.use("/user", userManageRoute);
 
 // SEVER RUNNING
 const PORT = process.env.PORT || 1705;

@@ -8,4 +8,9 @@ const userController = require("../controller/auth.controller");
 // Access: public
 route.post("/register", userController.register);
 
+// LOGIN
+// Route: auth/login
+// Access: public
+route.post("/login", userController.login);
+
 module.exports = route;

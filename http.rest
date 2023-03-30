@@ -1,0 +1,65 @@
+POST http://localhost:8000/v1/player/many
+Content-Type: application/json
+
+[
+    {
+        "long_name": "Nguyen Di Dan",
+        "player_position": ["RW", "CAM"],
+        "value_eur": "17000",
+        "age": 21,
+        "dob": "2002-05-17",
+        "club_name": "HungYen City",
+        "nationality_name": "Vietnam",
+        "player_face_url": "https://cdn.sofifa.net/players/200/145/22_120.png" 
+    },
+    {
+        "long_name": "Nguyen Van Thang",
+        "player_position": ["LW", "ST"],
+        "value_eur": "24800",
+        "age": 19,
+        "dob": "2004-04-28",
+        "club_name": "AnThi District",
+        "nationality_name": "Vietnam",
+        "player_face_url": "https://cdn.sofifa.net/players/200/104/22_120.png" 
+    }
+]
+####
+
+GET http://localhost:1705/v1/player
+
+###
+POST http://localhost:1705/auth/register
+Content-Type: application/json
+
+{
+    "username": "dannguyen1",
+    "password": "12345"
+}
+
+####
+
+POST http://localhost:1705/auth/login
+Content-Type: application/json
+
+{
+    "username": "dannguyen2",
+    "password": "12345"
+}
+
+
+####
+POST  http://localhost:1705/user/create
+Content-Type: application/json
+#Authorization: Bearer <token lay o accessToken khi login>
+Authorization: Bearer <token lay o accessToken khi login>
+
+{
+    "long_name": "Nguyen Di Dan",
+    "player_positions": ["CS", "TA"],
+    "value_eur": "17000",
+    "age": 21,
+    "dob": "2002-05-17",
+    "club_name": "HungYen City",
+    "nationality_name": "Vietnam",
+    "player_face_url": "https://cdn.sofifa.net/players/200/145/22_120.png" 
+}
