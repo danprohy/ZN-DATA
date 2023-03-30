@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const dotenv = require("dotenv").config();
-const db2 = mongoose.createConnection(process.env.MONGODB_URL2);
+const db2 = mongoose.createConnection(process.env.MONGODB_URL1);
 const { Player } = require("./player");
 const Schema = mongoose.Schema;
 const userSchema = new Schema({
@@ -17,11 +17,8 @@ const userSchema = new Schema({
     type: Date,
     default: Date.now,
   },
-  //   manage: {
-  //     type: Schema.Types.ObjectId,
-  //     ref: 'Player'
-  //   }
 });
 
-let User = db2.model("User", userSchema);
+// let User = db2.model("User", userSchema);  // Dung de connect den datasbase thu 2
+let User = mongoose.model("User", userSchema);
 module.exports = { User };

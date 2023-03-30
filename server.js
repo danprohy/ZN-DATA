@@ -38,11 +38,11 @@ const connectDB = async () => {
       useUnifiedTopology: true,
     });
     console.log("Connected to the database1!");
-    await mongoose.connect(process.env.MONGODB_URL1, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
-    console.log("Connected to the database2!");
+    // await mongoose.connect(process.env.MONGODB_URL1, {
+    //   useNewUrlParser: true,
+    //   useUnifiedTopology: true,
+    // });
+    // console.log("Connected to the database2!");
   } catch (err) {
     console.log("Cannot connect to the database!", err);
     process.exit(1);

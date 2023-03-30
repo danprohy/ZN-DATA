@@ -43,5 +43,6 @@ const playerSchema = new Schema({
   },
 });
 
-let Player = db1.model("Player", playerSchema);
+//let Player = db1.model("Player", playerSchema);  // Dung de connect den datasbase thu 1
+let Player = mongoose.model("Player", playerSchema);
 module.exports = { Player };
