@@ -1,6 +1,8 @@
 const mongoose = require("mongoose");
-
-const playerSchema = new mongoose.Schema({
+const dotenv = require("dotenv").config();
+const db1 = mongoose.createConnection(process.env.MONGODB_URL1);
+const Schema = mongoose.Schema;
+const playerSchema = new Schema({
   long_name: {
     type: String,
     required: true,
@@ -41,5 +43,5 @@ const playerSchema = new mongoose.Schema({
   },
 });
 
-let Player = mongoose.model("Player", playerSchema);
+let Player = db1.model("Player", playerSchema);
 module.exports = { Player };

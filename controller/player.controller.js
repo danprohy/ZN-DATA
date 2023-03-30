@@ -1,4 +1,4 @@
-const { Player } = require("../model/model");
+const { Player } = require("../model/player");
 
 const playerController = {
   // ADD PLAYER
