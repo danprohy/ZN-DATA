@@ -41,9 +41,11 @@ const manageplayerSchema = new Schema({
     },
     required: false,
   },
+
+  // Creat param user to manage private Player by Author
   user: {
-    type: Schema.Types.ObjectId,
-    ref: "User",
+    type: Schema.Types.ObjectId, // Get type is ID of User
+    ref: "User", // reference to User in user.js
   },
 });
 
