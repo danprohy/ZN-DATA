@@ -28,7 +28,7 @@ app.use("/user", userManageRoute);
 // SEVER RUNNING
 const PORT = process.env.PORT || 1705;
 app.listen(PORT, async () => {
-  console.log(`Sever is running on PORT ${PORT}...`);
+  console.log(`Server is running on PORT ${PORT}...`);
 });
 // CONNECT DATABASE
 const connectDB = async () => {

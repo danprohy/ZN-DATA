@@ -32,7 +32,7 @@ const userController = {
 
       // Res access TOKEN
       const accessToken = jwt.sign(
-        { userID: newUser._id },
+        { _id: newUser._id },
         process.env.ACCESS_TOKEN_SECRET
       ); // Let userID = id
       res.json({
@@ -66,7 +66,7 @@ const userController = {
       }
       // Username found
       const passwordValid = await argon2.verify(user.password, password);
-      if (!password) {
+      if (!passwordValid) {
         return res
           .status(400)
           .json({ success: false, message: "Incorrect username or password" });
@@ -74,9 +74,7 @@ const userController = {
       // All good
       // Res token
       const accessToken = jwt.sign(
-        {
-          userID: user._id,
-        },
+        { _id: user._id },
         process.env.ACCESS_TOKEN_SECRET
       );
       res.json({ success: true, message: "Login successfully", accessToken });

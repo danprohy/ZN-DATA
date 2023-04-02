@@ -25,9 +25,13 @@ Content-Type: application/json
     }
 ]
 #### Get Player v1/player/id
+GET http://localhost:1705/v1/player/6426b9347fa27cfbe3d8ea5f
 #### Get All Player
 
 GET http://localhost:1705/v1/player
+
+### DELETE PLAYER
+DELETE http://localhost:1705/v1/player/6426b9347fa27cfbe3d8ea5f
 
 ### REGISTER
 POST http://localhost:1705/auth/register
@@ -37,6 +41,8 @@ Content-Type: application/json
     "username": "dannguyen2",
     "password": "12345"
 }
+
+
 
 #### LOGIN
 
@@ -53,7 +59,7 @@ Content-Type: application/json
 POST  http://localhost:1705/user/create
 Content-Type: application/json
 #Authorization: Bearer <token lay o accessToken khi login>
-Authorization: Bearer <token lay o accessToken khi login>
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDI1ZDJiNWEyNDU2OWI5MGNjOWUyMGQiLCJpYXQiOjE2ODA0NTM3Njd9.8krIZ-7of7xwYFlTQYF3Rm0H0X0g5AqObLYTMRcVQX8
 
 {
     "long_name": "Nguyen Di Dan",
@@ -63,5 +69,8 @@ Authorization: Bearer <token lay o accessToken khi login>
     "dob": "2002-05-17",
     "club_name": "HungYen City",
     "nationality_name": "Vietnam",
-    "player_face_url": "https://cdn.sofifa.net/players/200/145/22_120.png" 
+    "player_face_url": "https://cdn.sofifa.net/players/200/145/22_120.png"
+
 }
+
+
