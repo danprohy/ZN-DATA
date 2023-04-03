@@ -23,7 +23,7 @@ app.use(cors());
 //ROUTES
 app.use("/auth", authRoute);
 app.use("/v1/player", playerRoute);
-app.use("/user", userManageRoute);
+app.use("/user/player", userManageRoute);
 
 // SEVER RUNNING
 const PORT = process.env.PORT || 1705;
@@ -37,7 +37,7 @@ const connectDB = async () => {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
-    console.log("Connected to the database1!");
+    console.log("Connected to the database!");
     // await mongoose.connect(process.env.MONGODB_URL1, {
     //   useNewUrlParser: true,
     //   useUnifiedTopology: true,

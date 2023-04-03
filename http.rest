@@ -56,13 +56,13 @@ Content-Type: application/json
 
 
 #### Add Player by Author
-POST  http://localhost:1705/user/create
+POST  http://localhost:1705/user/player
 Content-Type: application/json
 #Authorization: Bearer <token lay o accessToken khi login>
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDI1ZDJiNWEyNDU2OWI5MGNjOWUyMGQiLCJpYXQiOjE2ODA0NTM3Njd9.8krIZ-7of7xwYFlTQYF3Rm0H0X0g5AqObLYTMRcVQX8
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDI1ZDJiNWEyNDU2OWI5MGNjOWUyMGQiLCJpYXQiOjE2ODA1NDEzNDR9.zODweVtpMXTQDXNoZNJvhGU-Hyxm0v6Wd7_LZ-C-iCY
 
 {
-    "long_name": "Nguyen Di Dan",
+    "long_name": "Nguyen Di Dang",
     "player_positions": ["CS", "TA"],
     "value_eur": "17000",
     "age": 21,
@@ -74,3 +74,28 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDI1ZDJiN
 }
 
 
+### GET PLAYER by Author
+GET http://localhost:1705/user/player
+#Authorization: Bearer <token lay o accessToken khi login>
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDI1ZDJiNWEyNDU2OWI5MGNjOWUyMGQiLCJpYXQiOjE2ODA1NDEzNDR9.zODweVtpMXTQDXNoZNJvhGU-Hyxm0v6Wd7_LZ-C-iCY
+
+
+#### UPDATE PLAYER by Author
+PUT http://localhost:1705/user/player/642b1e36ad3ad8fd515b57e6
+Content-Type: application/json
+#Authorization: Bearer <token lay o accessToken khi login>
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDI1ZDJiNWEyNDU2OWI5MGNjOWUyMGQiLCJpYXQiOjE2ODA1NDEzNDR9.zODweVtpMXTQDXNoZNJvhGU-Hyxm0v6Wd7_LZ-C-iCY
+
+{
+    "long_name": "Nguyen Di Dan",
+    "value_eur": "17000",
+    "age": 21,
+    "dob": "2002-05-17",
+    "club_name": "HungYen City",
+    "nationality_name": "Vietnam"
+}
+
+### DELETE PLAYER by Author
+DELETE http://localhost:1705/user/player/642b1e36ad3ad8fd515b57e6
+#Authorization: Bearer <token lay o accessToken khi login>
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDI1ZDJiNWEyNDU2OWI5MGNjOWUyMGQiLCJpYXQiOjE2ODA1NDEzNDR9.zODweVtpMXTQDXNoZNJvhGU-Hyxm0v6Wd7_LZ-C-iCY

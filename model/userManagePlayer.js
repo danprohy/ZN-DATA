@@ -42,5 +42,6 @@ const manageplayerSchema = new Schema({
   },
 });
 
-let UserPlayer = db1.model("Player", manageplayerSchema);
+let UserPlayer = mongoose.model("UserPlayer", manageplayerSchema);
+// let UserPlayer = db2.model("UserPlayer", manageplayerSchema); // Dung de ket noi toi database2
 module.exports = { UserPlayer };
