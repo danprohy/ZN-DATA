@@ -10,15 +10,18 @@ const authRoute = require("./routes/auth.route");
 const userManageRoute = require("./routes/userManagePlayer.route");
 const { options } = require("./routes/player.route");
 
-dotenv.config();
-var corsOptions = {
-  origin: "http://localhost:8081",
-};
-app.use(cors(corsOptions));
 
-app.use(bodyParser.json({ limit: "50mb" }));
+
+dotenv.config();
+// var corsOptions = {
+//   origin: "http://localhost:8081",
+// };
+
+app.use(express.json());
 app.use(morgan("common"));
+// cors , tranh lo be va fe dung 2 port khac nhau
 app.use(cors());
+// app.use(cors(corsOptions));
 
 //ROUTES
 app.use("/auth", authRoute);
