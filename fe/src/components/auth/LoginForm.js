@@ -48,7 +48,7 @@ const LoginForm = () => {
   };
 
   return (
-    <div className="w-25">
+    <div>
       <Form onSubmit={login}>
       <Alert info={alert}/>
         <Form.Group className="mb-2 mt-4">

@@ -56,11 +56,11 @@ const RegisterForm = () => {
   };
 
   return (
-    <div className="w-25">
+    <div>
       <Form onSubmit={register}>
         <Alert info={alert} />
 
-        <Form.Group className="mb-2 mt-4">
+        <Form.Group className="mb-2 mt-4 w-100">
           <Form.Control
             type="text"
             placeholder="Username"
