@@ -4,6 +4,7 @@ import Landing from "./components/layout/Landing";
 import Auth from "./views/Auth";
 import AuthContextsProvider from "./contexts/AuthContexts";
 import Dashboard from "./views/Dashboard";
+import ProtectRoute from "./route/ProtectRoute";
 
 function App() {
   return (
@@ -11,14 +12,13 @@ function App() {
       <Router>
         <Routes>
           {/* Tao route cho user bat buoc vao trang login */}
-          <Route exact path="/" Component={Landing} />
-          <Route exact path="/login" element={<Auth authRoute="login" />} />
-          <Route
-            exact
-            path="/register"
-            element={<Auth authRoute="register" />}
-          />
-          <Route exact path="/dashboard" Component={Dashboard} />
+          <Route path="/" element={<Landing />} />
+          <Route path="/login/*" element={<Auth authRoute="login" />} />
+          <Route path="/register/*" element={<Auth authRoute="register" />} />
+          <Route path="/dashboard" element={<ProtectRoute>
+            <Dashboard />
+          </ProtectRoute>} >
+          </Route>
         </Routes>
       </Router>
     </AuthContextsProvider>

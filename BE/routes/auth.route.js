@@ -1,7 +1,13 @@
 const express = require("express");
+const verifyToken = require("../middleware/auth");
 const route = express.Router();
 
 const userController = require("../controller/auth.controller");
+
+// GET AUTHENTICATE USER
+// Route: /auth
+// Access: public
+route.get("/", verifyToken, userController.getAuthenticate);
 
 // REGISTER
 // Route: auth/register

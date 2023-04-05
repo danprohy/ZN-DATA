@@ -4,6 +4,22 @@ const jwt = require("jsonwebtoken");
 const dotenv = require("dotenv").config();
 
 const userController = {
+  // GET AUTHENTICATE USER
+  // Route: /auth
+  // Access: public
+  getAuthenticate: async (req, res) => {
+    try {
+      const user = await User.findById(req.userId).select("-password"); // Tim id user (ko tim pass)
+      if (!user) {
+        res.status(400).json({ success: false, message: "User not found" });
+      }
+      res.status(200).json({ success: true, user });
+    } catch (err) {
+      console.log(err);
+      res.status(500).json({success: false, message: "Server error"});
+    }
+  },
+
   // REGISTER
   // Route: auth/register
   // Access: public
