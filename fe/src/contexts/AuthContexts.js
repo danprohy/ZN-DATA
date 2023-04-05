@@ -53,6 +53,28 @@ const AuthContextsProvider = ({ children }) => {
           response.data.accessToken
         );
 
+      await userLoad(); // Login thanh cong la tu day vao dashboard, khong can f5 nua
+
+      return response.data;
+    } catch (err) {
+      if (err.response.data) return err.response.data;
+      else return { success: false, message: err.message };
+    }
+  }; 
+
+
+  // Register
+  const registerUser = async (userForm) => {
+    try {
+      const response = await axios.post(`${apiUrl}/register`, userForm);
+      if (response.data.success)
+        localStorage.setItem(
+          LOCAL_STORAGE_TOKEN_NAME,
+          response.data.accessToken
+        );
+
+      await userLoad(); // Login thanh cong la tu day vao dashboard, khong can f5 nua
+
       return response.data;
     } catch (err) {
       if (err.response.data) return err.response.data;
@@ -61,7 +83,7 @@ const AuthContextsProvider = ({ children }) => {
   };
 
   //Context data
-  const authContextData = { loginUser, authState };
+  const authContextData = { loginUser, registerUser, authState };
 
   // Return Provider
   return (

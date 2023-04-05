@@ -1,22 +1,28 @@
 import React from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useState, useContext } from "react";
 import { AuthContexts } from "../../contexts/AuthContexts";
+import Alert from "../layout/Alert";
+
 
 const LoginForm = () => {
   // Context
   const { loginUser } = useContext(AuthContexts);
 
   // Router
-  const history = useNavigate();
+  // const history = useNavigate();
 
   // Local Storage
   const [loginForm, setLoginForm] = useState({
     username: "",
     password: "",
   });
+
+  // Alert Miss when Wrong Pass
+  const [alert, setAlert] = useState(null);
+
 
   const { username, password } = loginForm;
   // Luu username, password khi nguoi dung nhap
@@ -30,9 +36,11 @@ const LoginForm = () => {
     try {
       const loginData = await loginUser(loginForm);
       if(loginData.success) {
-        history('/dashboard'); // day di noi khac
+        // history('/dashboard'); // day di noi khac
+        // Tuy nhien khong can do ham userLoad o AuthContexts da duoc goi o Auth.js
       } else{
-
+        setAlert({type: 'danger', message: loginData.message});
+        setTimeout(() => setAlert(null), 2000);
       }
     } catch (err) {
       console.log(err);
@@ -42,6 +50,7 @@ const LoginForm = () => {
   return (
     <div className="w-25">
       <Form onSubmit={login}>
+      <Alert info={alert}/>
         <Form.Group className="mb-2 mt-4">
           <Form.Control
             type="text"

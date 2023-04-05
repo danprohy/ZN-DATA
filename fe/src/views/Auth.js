@@ -24,7 +24,6 @@ const Auth = ({ authRoute }) => {
   else {
     body = (
       <>
-        Welcome to My Database
         {authRoute === "login" && <LoginForm />}
         {authRoute === "register" && <RegisterForm />}
       </>
