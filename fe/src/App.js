@@ -5,6 +5,7 @@ import Auth from "./views/Auth";
 import AuthContextsProvider from "./contexts/AuthContexts";
 import Dashboard from "./views/Dashboard";
 import ProtectRoute from "./route/ProtectRoute";
+import NavBar from "./components/layout/NavBar";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/login/*" element={<Auth authRoute="login" />} />
           <Route path="/register/*" element={<Auth authRoute="register" />} />
           <Route path="/dashboard" element={<ProtectRoute>
+            <NavBar />
             <Dashboard />
           </ProtectRoute>} >
           </Route>
