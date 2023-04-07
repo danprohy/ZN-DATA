@@ -7,28 +7,39 @@ import Home from "./views/Home";
 import ProtectRoute from "./route/ProtectRoute";
 import NavBar from "./components/layout/NavBar";
 import About from "./components/layout/About";
+import DataContextsProvider from "./contexts/DataContexts";
 
 function App() {
   return (
     <AuthContextsProvider>
-      <Router>
-        <Routes>
-          {/* Tao route cho user bat buoc vao trang login */}
-          <Route path="/" element={<Landing />} />
-          <Route path="/login/*" element={<Auth authRoute="login" />} />
-          <Route path="/register/*" element={<Auth authRoute="register" />} />
-          <Route path="/home" element={<ProtectRoute>
-            <NavBar />
-            <Home />
-          </ProtectRoute>} >
-          </Route>
-          <Route path="/about" element={<ProtectRoute>
-            <NavBar />
-            <About />
-          </ProtectRoute>} >
-          </Route>
-        </Routes>
-      </Router>
+      <DataContextsProvider>
+        <Router>
+          <Routes>
+            {/* Tao route cho user bat buoc vao trang login */}
+            <Route path="/" element={<Landing />} />
+            <Route path="/login/*" element={<Auth authRoute="login" />} />
+            <Route path="/register/*" element={<Auth authRoute="register" />} />
+            <Route
+              path="/home"
+              element={
+                <ProtectRoute>
+                  <NavBar />
+                  <Home />
+                </ProtectRoute>
+              }
+            ></Route>
+            <Route
+              path="/about"
+              element={
+                <ProtectRoute>
+                  <NavBar />
+                  <About />
+                </ProtectRoute>
+              }
+            ></Route>
+          </Routes>
+        </Router>
+      </DataContextsProvider>
     </AuthContextsProvider>
   );
 }

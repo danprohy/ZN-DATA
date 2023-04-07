@@ -34,3 +34,28 @@
 	-webkit-transform: translateX(-50%) translateY(-50%);
 	transform: translateX(-50%) translateY(-50%);
 }
+
+.player-name {
+	margin-bottom: 0.5rem;
+}
+
+/* Floating add button */
+.btn-floating {
+	position: fixed;
+	right: 3rem;
+	bottom: 3rem;
+	background: transparent;
+	border: none;
+}
+
+.btn-floating:hover {
+	background: transparent;
+}
+
+.btn-floating:focus,
+.btn-floating:active {
+	outline: none;
+	background: transparent;
+	border: none;
+	box-shadow: none;
+}

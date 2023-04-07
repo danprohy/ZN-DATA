@@ -59,17 +59,17 @@ Content-Type: application/json
 POST  http://localhost:1705/user/player
 Content-Type: application/json
 #Authorization: Bearer <token lay o accessToken khi login>
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDI1ZDJiNWEyNDU2OWI5MGNjOWUyMGQiLCJpYXQiOjE2ODA1NDEzNDR9.zODweVtpMXTQDXNoZNJvhGU-Hyxm0v6Wd7_LZ-C-iCY
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDI1ZDJiNWEyNDU2OWI5MGNjOWUyMGQiLCJpYXQiOjE2ODA4ODE1Mjd9.v-f8Ry793gb8ggGu4sFEjoUUeZ8GFPqo8YLxVm44CYM
 
 {
-    "long_name": "Nguyen Di Dang",
-    "player_positions": ["CS", "TA"],
-    "value_eur": "17000",
-    "age": 21,
-    "dob": "2002-05-17",
+    "long_name": "Ly Bach",
+    "player_positions": "Gk",
+    "value_eur": "7200",
+    "age": 19,
+    "dob": "2003-11-07",
     "club_name": "HungYen City",
     "nationality_name": "Vietnam",
-    "player_face_url": "https://cdn.sofifa.net/players/200/145/22_120.png"
+    "player_face_url": "https://cdn.sofifa.net/players/200/145/22_122.png"
 
 }
 

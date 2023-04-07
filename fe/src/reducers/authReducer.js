@@ -1,4 +1,4 @@
-// Luu trang thai dang nha nguoi dung
+// Luu trang thai dang nhap nguoi dung
 export const authReducer = (state, action) => {
   const {
     type,

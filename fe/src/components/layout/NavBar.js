@@ -37,8 +37,8 @@ const NavBar = () => {
         />
         PlayerDatabase
       </Navbar.Brand>
-      <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-      <Navbar.Collapse id="responsive-navbar-nav">
+      <Navbar.Toggle aria-controls="responsive-navbar-nav" className="mx-4"/>
+      <Navbar.Collapse id="responsive-navbar-nav" className="mx-4">
         <Nav className="me-auto">
           <Nav.Link
             className="font-weight-bolder text-white"

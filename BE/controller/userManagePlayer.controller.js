@@ -51,11 +51,11 @@ const userPlayerController = {
   // Private
   getPlayer: async (req, res) => {
     try {
-      const getUser = await UserPlayer.find({ user: req.userId }).populate(
+      const players = await UserPlayer.find({ user: req.userId }).populate(
         "user",
         ["username"]
       ); // Ham populate, tra ve cac truong moc sang user model, bo truong password ra
-      res.status(200).json({ success: true, getUser });
+      res.status(200).json({ success: true, players });
     } catch (err) {
       console.log(err);
       res.status(500).json({ success: false, message: "Server error" });

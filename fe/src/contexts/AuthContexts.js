@@ -21,7 +21,7 @@ const AuthContextsProvider = ({ children }) => {
     }
 
     try {
-      const response = await axios.get(`${apiUrl}`);
+      const response = await axios.get(`${apiUrl}/auth`);
       if (response.data.success) {
         dispatch({
           type: "SET_AUTH",
@@ -46,7 +46,7 @@ const AuthContextsProvider = ({ children }) => {
   // Login
   const loginUser = async (userForm) => {
     try {
-      const response = await axios.post(`${apiUrl}/login`, userForm);
+      const response = await axios.post(`${apiUrl}/auth/login`, userForm);
       if (response.data.success)
         localStorage.setItem(
           LOCAL_STORAGE_TOKEN_NAME,
@@ -66,7 +66,7 @@ const AuthContextsProvider = ({ children }) => {
   // Register
   const registerUser = async (userForm) => {
     try {
-      const response = await axios.post(`${apiUrl}/register`, userForm);
+      const response = await axios.post(`${apiUrl}/auth/register`, userForm);
       if (response.data.success)
         localStorage.setItem(
           LOCAL_STORAGE_TOKEN_NAME,
