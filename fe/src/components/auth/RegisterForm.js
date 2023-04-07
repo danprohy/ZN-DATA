@@ -45,7 +45,7 @@ const RegisterForm = () => {
       const registerData = await registerUser(registerForm);
       // Neu ko dang ky thanh cong (server || trung username ....)
       if (!registerData.success) {
-        // history('/dashboard'); // day di noi khac
+        // history('/home'); // day di noi khac
         // Tuy nhien khong can do ham userLoad o AuthContexts da duoc goi o Auth.js
         setAlert({ type: "danger", message: registerData.message });
         setTimeout(() => setAlert(null), 2000);

@@ -36,7 +36,7 @@ const LoginForm = () => {
     try {
       const loginData = await loginUser(loginForm);
       if(loginData.success) {
-        // history('/dashboard'); // day di noi khac
+        // history('/home'); // day di noi khac
         // Tuy nhien khong can do ham userLoad o AuthContexts da duoc goi o Auth.js
       } else{
         setAlert({type: 'danger', message: loginData.message});

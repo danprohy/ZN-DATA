@@ -3,9 +3,10 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Landing from "./components/layout/Landing";
 import Auth from "./views/Auth";
 import AuthContextsProvider from "./contexts/AuthContexts";
-import Dashboard from "./views/Dashboard";
+import Home from "./views/Home";
 import ProtectRoute from "./route/ProtectRoute";
 import NavBar from "./components/layout/NavBar";
+import About from "./components/layout/About";
 
 function App() {
   return (
@@ -16,9 +17,14 @@ function App() {
           <Route path="/" element={<Landing />} />
           <Route path="/login/*" element={<Auth authRoute="login" />} />
           <Route path="/register/*" element={<Auth authRoute="register" />} />
-          <Route path="/dashboard" element={<ProtectRoute>
+          <Route path="/home" element={<ProtectRoute>
             <NavBar />
-            <Dashboard />
+            <Home />
+          </ProtectRoute>} >
+          </Route>
+          <Route path="/about" element={<ProtectRoute>
+            <NavBar />
+            <About />
           </ProtectRoute>} >
           </Route>
         </Routes>

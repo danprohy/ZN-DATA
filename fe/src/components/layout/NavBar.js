@@ -5,14 +5,27 @@ import Button from "react-bootstrap/Button";
 import LogoutSvg from "../../assets/img/logout.svg";
 import LogoSvg from "../../assets/img/logo.svg";
 import { Link } from "react-router-dom";
+import { AuthContexts } from "../../contexts/AuthContexts";
+import { useContext } from "react";
 
 const NavBar = () => {
+  // Get username and logout function from AuthContexts
+  const {
+    authState: {
+      user: {username}
+    },
+    logoutUser,
+  } = useContext(AuthContexts);
+
+  const logout = () => logoutUser();
+
   return (
     <Navbar
       expand="lg"
       bg="success"
       variant="dark"
       className="shadow bg-gradient"
+      sticky="top"
     >
       <Navbar.Brand className="text-white font-weight-bolder">
         <img
@@ -24,15 +37,15 @@ const NavBar = () => {
         />
         PlayerDatabase
       </Navbar.Brand>
-      <Navbar.Toggle aria-controls="basic-navbar-nav" />
-      <Navbar.Collapse id="basic-navbar-nav">
+      <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+      <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="me-auto">
           <Nav.Link
             className="font-weight-bolder text-white"
-            to="/dashboard"
+            to="/home"
             as={Link}
           >
-            Dashboard
+            Home
           </Nav.Link>
           <Nav.Link
             className="font-weight-bolder text-white"
@@ -44,11 +57,12 @@ const NavBar = () => {
         </Nav>
         <Nav>
           <Nav.Link className="font-weight-bolder text-white" disabled>
-            Welcome User
+            Welcome <span className="text-warning">{username}</span> 
           </Nav.Link>
           <Button
-            variant="warning"
-            className="font-weight-bolder text-black mx-4"
+            variant="secondary"
+            className="font-weight-bolder text-black mx-4 bg-gradient"
+            onClick={logout}
           >
             <img
               src={LogoutSvg}

@@ -53,7 +53,7 @@ const AuthContextsProvider = ({ children }) => {
           response.data.accessToken
         );
 
-      await userLoad(); // Login thanh cong la tu day vao dashboard, khong can f5 nua
+      await userLoad(); // Login thanh cong la tu day vao home, khong can f5 nua
 
       return response.data;
     } catch (err) {
@@ -73,7 +73,7 @@ const AuthContextsProvider = ({ children }) => {
           response.data.accessToken
         );
 
-      await userLoad(); // Login thanh cong la tu day vao dashboard, khong can f5 nua
+      await userLoad(); // Login thanh cong la tu day vao home, khong can f5 nua
 
       return response.data;
     } catch (err) {
@@ -82,8 +82,17 @@ const AuthContextsProvider = ({ children }) => {
     }
   };
 
+  // Logout User
+  const logoutUser = () =>{
+    localStorage.removeItem(LOCAL_STORAGE_TOKEN_NAME);
+    dispatch({
+      type: "SET_AUTH",
+      payload: { isAuthenticated: false, user: null },
+    });
+  };
+
   //Context data
-  const authContextData = { loginUser, registerUser, authState };
+  const authContextData = { loginUser, registerUser, logoutUser, authState };
 
   // Return Provider
   return (
