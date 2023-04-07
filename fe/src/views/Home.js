@@ -65,7 +65,10 @@ const Home = () => {
           ))}
         </Row>
         {/* Add Modal */}
-        <OverlayTrigger placement="left" overlay={<Tooltip>Add new player database</Tooltip>}>
+        <OverlayTrigger
+          placement="left"
+          overlay={<Tooltip>Add new player database</Tooltip>}
+        >
           <Button
             className="btn-floating"
             onClick={setShowAddModal.bind(this, true)}
