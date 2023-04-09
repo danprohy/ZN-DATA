@@ -11,18 +11,19 @@ import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
 import SingerPlayer from "../components/data/SinglePlayer";
 import AddPlayerModal from "../components/data/AddPlayerModal";
+import UpdatePlayerModal from "../components/data/UpdatePlayerModal";
 import AddIcon from "../assets/img/addIcon.svg";
 
 const Home = () => {
   // Context
-  const {
+  const { 
     authState: {
       user: { username },
     },
   } = useContext(AuthContexts);
 
   const {
-    dataState: { players, dataLoading },
+    dataState: { players, player, dataLoading },
     getData, // Lay ham getData khi moc ra
     setShowAddModal,
   } = useContext(DataContexts);
@@ -49,7 +50,7 @@ const Home = () => {
               Welcome to Player Database, you haven't add your player yet.
             </Card.Title>
             <Card.Text>Click the button below to add your player</Card.Text>
-            <Button variant="primary">ADD</Button>
+            <Button variant="primary" onClick={setShowAddModal.bind(this, true)}>ADD</Button>
           </Card.Body>
         </Card>
       </>
@@ -83,6 +84,7 @@ const Home = () => {
     <>
       {body}
       <AddPlayerModal />
+      {player !== null && <UpdatePlayerModal />}
     </>
   );
 };
