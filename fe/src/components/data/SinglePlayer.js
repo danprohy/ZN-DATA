@@ -54,12 +54,16 @@ const SingerPlayer = ({
           </Card.Text>
           <Card.Text>
             <span className="label-title">Value: </span>
-            {value_eur}
+            {value_eur}€
           </Card.Text>
         </Col>
         <Col>
           <p className="text-right">
-            <img src={player_face_url} alt="face_player" />
+            <img
+              src={player_face_url}
+              alt="face_player"
+              style={{ width: "120px", height: "120px" }}
+            />
           </p>
         </Col>
       </Row>

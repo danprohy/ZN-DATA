@@ -56,6 +56,9 @@
 .text-right{
 	text-align: end;
 }
+.label-title{
+	font-weight: bold;
+}
 
 /* Floating add button */
 .btn-floating {

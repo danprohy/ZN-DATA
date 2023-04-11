@@ -6,8 +6,6 @@ fe/node_modules
 # testing
 fe/coverage
 
-# production
-fe/build
 
 # misc
 .env

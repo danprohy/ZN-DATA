@@ -46,6 +46,62 @@ const userPlayerController = {
       res.status(500).json({ success: false, message: "Server error" });
     }
   },
+
+  // ADD MULTI PLAYER
+  // Creating Many
+  addMultiPlayers: async (req, res) => {
+    const playerData = req.body;
+
+    if (!Array.isArray(playerData)) {
+      return res
+        .status(400)
+        .json({ success: false, message: "Invalid player data" });
+    }
+
+    try {
+      const newPlayers = [];
+
+      for (let i = 0; i < playerData.length; i++) {
+        const {
+          long_name,
+          player_positions,
+          value_eur,
+          age,
+          dob,
+          club_name,
+          nationality_name,
+          player_face_url,
+        } = playerData[i];
+        if (!long_name) {
+          return res
+            .status(400)
+            .json({ success: false, message: "The name is required" });
+        }
+        const newPlayer = new UserPlayer({
+          long_name,
+          player_positions,
+          value_eur,
+          age,
+          dob,
+          club_name,
+          nationality_name,
+          player_face_url,
+          user: req.userId,
+        });
+        await newPlayer.save();
+        newPlayers.push(newPlayer);
+      }
+      res.json({
+        success: true,
+        message: "Added successfully",
+        players: newPlayers,
+      });
+    } catch (err) {
+      console.log(err);
+      res.status(500).json({ success: false, message: "Server error" });
+    }
+  },
+
   // user/player
   // GET Player
   // Private

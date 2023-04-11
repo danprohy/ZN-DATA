@@ -8,6 +8,10 @@ const userManagePlayerController = require("../controller/userManagePlayer.contr
 // Private
 route.post("/", verifyToken, userManagePlayerController.addPlayer); // Kiem tra Token, ok roi moi tiep tuc thc hien
 
+// ADD MULTI PLAYER
+// Creating Many
+route.post("/many", verifyToken, userManagePlayerController.addMultiPlayers);
+
 // user/player
 // GET PLAYER
 // Private
