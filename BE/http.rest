@@ -50,7 +50,7 @@ POST http://localhost:1705/auth/login
 Content-Type: application/json
 
 {
-    "username": "admin",
+    "username": "ThangElnino2004@",
     "password": "admin"
 }
 

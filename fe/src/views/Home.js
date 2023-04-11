@@ -37,7 +37,7 @@ const Home = () => {
   if (dataLoading) {
     body = (
       <div className="spinner-container">
-        <Spinner animation="border" variant="info" />
+        <Spinner animation="grow" variant="info" />
       </div>
     );
   } else if (players.length === 0) {
