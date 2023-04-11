@@ -37,7 +37,7 @@ const SingerPlayer = ({
             {age}
           </Card.Text>
           <Card.Text>
-            <span className="label-title">Bithday: </span>
+            <span className="label-title">Birthday: </span>
             {dob}
           </Card.Text>
           <Card.Text>
