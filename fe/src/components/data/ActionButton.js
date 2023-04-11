@@ -15,9 +15,9 @@ const ActionButton = ({ url, _id }) => {
 
   return (
     <>
-      <Button className="player-button" href={url} target="_blank">
+      {/* <Button className="player-button" href={url} target="_blank">
         <img src={openIcon} alt="open" width="16" height="16" />
-      </Button>
+      </Button> */}
       <Button className="player-button" onClick={selectPlayer.bind(this, _id)}>
         <img src={editIcon} alt="edit" width="16" height="16" />
       </Button>

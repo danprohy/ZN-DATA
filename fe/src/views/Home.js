@@ -16,7 +16,7 @@ import AddIcon from "../assets/img/addIcon.svg";
 
 const Home = () => {
   // Context
-  const { 
+  const {
     authState: {
       user: { username },
     },
@@ -50,7 +50,12 @@ const Home = () => {
               Welcome to Player Database, you haven't add your player yet.
             </Card.Title>
             <Card.Text>Click the button below to add your player</Card.Text>
-            <Button variant="primary" onClick={setShowAddModal.bind(this, true)}>ADD</Button>
+            <Button
+              variant="primary"
+              onClick={setShowAddModal.bind(this, true)}
+            >
+              ADD
+            </Button>
           </Card.Body>
         </Card>
       </>

@@ -35,8 +35,26 @@
 	transform: translateX(-50%) translateY(-50%);
 }
 
+/* Single Player */
 .player-name {
 	margin-bottom: 0.5rem;
+}
+.player-button{
+	padding-top: 0px;
+	margin: 0 4px;
+	background-color: transparent;
+	border: none;
+}
+.player-button:hover{
+	background-color: #b6c1ca !important;
+	border: none;
+}
+.player-button:active, .player-button:focus{
+	background-color: transparent;
+	border: none;
+}
+.text-right{
+	text-align: end;
 }
 
 /* Floating add button */
@@ -49,13 +67,13 @@
 }
 
 .btn-floating:hover {
-	background: transparent;
+	background: transparent !important;
 }
 
 .btn-floating:focus,
 .btn-floating:active {
 	outline: none;
-	background: transparent;
+	background: transparent !important;
 	border: none;
 	box-shadow: none;
 }

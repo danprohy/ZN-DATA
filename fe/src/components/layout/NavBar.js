@@ -12,7 +12,7 @@ const NavBar = () => {
   // Get username and logout function from AuthContexts
   const {
     authState: {
-      user: {username}
+      user: { username },
     },
     logoutUser,
   } = useContext(AuthContexts);
@@ -37,7 +37,7 @@ const NavBar = () => {
         />
         PlayerDatabase
       </Navbar.Brand>
-      <Navbar.Toggle aria-controls="responsive-navbar-nav" className="mx-4"/>
+      <Navbar.Toggle aria-controls="responsive-navbar-nav" className="mx-4" />
       <Navbar.Collapse id="responsive-navbar-nav" className="mx-4">
         <Nav className="me-auto">
           <Nav.Link
@@ -57,7 +57,7 @@ const NavBar = () => {
         </Nav>
         <Nav>
           <Nav.Link className="font-weight-bolder text-white" disabled>
-            Welcome <span className="text-warning">{username}</span> 
+            Welcome <span className="text-warning">{username}</span>
           </Nav.Link>
           <Button
             variant="secondary"
