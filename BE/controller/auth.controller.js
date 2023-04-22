@@ -1,7 +1,7 @@
 const { User } = require("../model/user");
 const argon2 = require("argon2");
 const jwt = require("jsonwebtoken");
-const dotenv = require("dotenv").config();
+// const dotenv = require("dotenv").config();
 
 const userController = {
   // GET AUTHENTICATE USER

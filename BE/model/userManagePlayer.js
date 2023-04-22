@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
-const dotenv = require("dotenv").config();
-const db1 = mongoose.createConnection(process.env.MONGODB_URL1);
+// const dotenv = require("dotenv").config();
+// const db1 = mongoose.createConnection(process.env.MONGODB_URL1);
 const Schema = mongoose.Schema;
 const manageplayerSchema = new Schema({
   long_name: {

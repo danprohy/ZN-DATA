@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
-const dotenv = require("dotenv").config();
-const db2 = mongoose.createConnection(process.env.MONGODB_URL1);
-const { Player } = require("./player");
+// const dotenv = require("dotenv").config();
+// const db2 = mongoose.createConnection(process.env.MONGODB_URL1);
+// const { Player } = require("./player");
 const Schema = mongoose.Schema;
 const userSchema = new Schema({
   username: {

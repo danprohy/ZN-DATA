@@ -2,13 +2,13 @@ const express = require("express");
 const cors = require("cors");
 const app = express();
 const mongoose = require("mongoose");
-const bodyParser = require("body-parser");
+// const bodyParser = require("body-parser");
 const morgan = require("morgan");
 const dotenv = require("dotenv");
 const playerRoute = require("./routes/player.route");
 const authRoute = require("./routes/auth.route");
 const userManageRoute = require("./routes/userManagePlayer.route");
-const { options } = require("./routes/player.route");
+// const { options } = require("./routes/player.route");
 
 
 
