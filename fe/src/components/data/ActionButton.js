@@ -1,5 +1,4 @@
 import Button from "react-bootstrap/Button";
-import openIcon from "../../assets/img/openIcon.svg";
 import editIcon from "../../assets/img/editIcon.svg";
 import removeIcon from "../../assets/img/remove.svg";
 import { useContext } from "react";

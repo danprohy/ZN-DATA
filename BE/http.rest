@@ -33,6 +33,10 @@ GET http://localhost:1705/v1/player
 ### DELETE PLAYER
 DELETE http://localhost:1705/v1/player/6426b9347fa27cfbe3d8ea5f
 
+
+
+
+
 ### REGISTER
 POST http://localhost:1705/auth/register
 Content-Type: application/json
