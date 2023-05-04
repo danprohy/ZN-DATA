@@ -54,10 +54,20 @@ POST http://localhost:1705/auth/login
 Content-Type: application/json
 
 {
-    "username": "ThangElnino2004@",
-    "password": "admin"
+    "username": "dannguyen",
+    "password": "12345"
 }
 
+##### ADD Player
+POST  http://localhost:1705/user/player/
+Content-Type: application/json
+#Authorization: Bearer <token lay o accessToken khi login>
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDJkZmJmZDIzMjFiMWM0YmVmN2VhZTQiLCJpYXQiOjE2ODI0MTM3Mzl9.FNvs2mfMxmNfNyJMbUFG_devTJcc75RhOyFkvWx3EvI
+
+
+{
+    "long_name": "A"
+}
 
 #### Add Player by Author
 POST  http://localhost:1705/user/player/many
