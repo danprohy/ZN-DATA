@@ -3,7 +3,7 @@ export const apiUrl =
   process.env.NODE_ENV !== "production"
     ? "https://zndataserver.ddns.net:1705"
     : "https://zndataserver.ddns.net:1705";
-// : "someDeployedURL";
+// : "someDeployedURL"
 export const LOCAL_STORAGE_TOKEN_NAME = "player-database";
 
 export const DATA_LOADED_SUCCESS = "DATA_LOADED_SUCCESS";
