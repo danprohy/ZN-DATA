@@ -1,7 +1,7 @@
 // lay url tu api, sau khi deploy
 export const apiUrl =
   process.env.NODE_ENV !== "production"
-    ? "http://localhost:1705"
+    ? "http://192.168.0.101:1705" // Sua server o dong nay thay bang "dia chi ip address:1705"
     : "someDeployedURL";
 // : "someDeployedURL";
 export const LOCAL_STORAGE_TOKEN_NAME = "player-database";
