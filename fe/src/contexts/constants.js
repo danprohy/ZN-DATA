@@ -1,8 +1,8 @@
 // lay url tu api, sau khi deploy
 export const apiUrl =
   process.env.NODE_ENV !== "production"
-    ? "http://192.168.0.101:1705"
-    : "http://localhost:1705";
+    ? "http://zndataserver.ddns.net:1705"
+    : "http://zndataserver.ddns.net:1705";
 // : "someDeployedURL";
 export const LOCAL_STORAGE_TOKEN_NAME = "player-database";
 
